@@ -64,7 +64,9 @@ function loadStyle(getStyleDirectory) {
     loadJS(`${urlRoot}${getStyleDirectory}/scripts.js`);
 
     // update about this theme
-    document.querySelector("#infoList > li:first-child > a").href = `${urlRoot}${getStyleDirectory}/readme.txt`;
+    getData(`${urlRoot}${getStyleDirectory}/readme.txt`, {}, false).then(function(response) {
+        document.querySelector("#modalPopup div").innerHTML = response;
+    });
 
 }
 
@@ -76,12 +78,14 @@ async function loadJS(fromPath) {
 }
 
 
-// generic ajax function for getting data
-async function getData(url, options = {}) {
+// generic ajax function for getting data, expanded to handle both text and json results
+async function getData(url, options = {}, asJSON = true) {
     try {
         const response = await fetch(url, options);
         if (response.ok) {
-            const result = await response.json();
+            let result;
+            if (asJSON) result = await response.json();
+            else result = await response.text();
             return result;
         } else {
             throw(response.status);
@@ -89,6 +93,12 @@ async function getData(url, options = {}) {
     } catch (error) {
         console.error(error);
     }
+}
+
+// toggle modal display by toggling class on body, which will trigger
+// css styles around body.showModal 
+function toggleModal() {
+	document.body.classList.toggle("showModal");
 }
 
 
@@ -136,6 +146,11 @@ document.addEventListener("DOMContentLoaded", function () {
             clickNav(true);
         }
     });
+
+    // button to show/hide modal
+	document.querySelector("#infoList > li:first-child > a").addEventListener("click", toggleModal);
+    document.querySelector("#modalCover").addEventListener("click", toggleModal);
+    document.querySelector("#modalPopup button").addEventListener("click", toggleModal);
 
     // load requested style, if any
     parseQuery();

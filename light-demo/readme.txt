@@ -1,12 +1,16 @@
-Layout name:
-Light Serif
+<!-- a small HTML snippet -- keep this formatting light -->
 
-Layout path:
-light-demo
+<p><strong>Layout name:</strong> Light Serif</p>
 
-Description:
-This layout modifies the original page by adding fonts, color, spacing, and borders.
+<p><strong>Layout path:</strong> light-demo</p>
 
-The JavaScript moves the <aside> to the end of <main> and gives it a new <h2> tag.
+<p><strong>Description:</strong></p>
 
-Responsively: the <aside> (now at the end) is in two columns at desktop widths, and the main header title changes font size.
+<ul>
+<li>This layout modifies the original page by adding fonts, color, spacing, and borders.</li>
+
+<li>The JavaScript moves the aside to the end of main and gives it a new h2 tag.</li>
+
+<li>Responsively: the aside (now at the end) is in two columns at desktop widths, and the main header 
+title changes font size.</li>
+</ul>

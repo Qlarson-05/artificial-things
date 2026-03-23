@@ -1,8 +1,9 @@
-Layout name:
-Default
+<!-- a small HTML snippet -- keep this formatting light -->
 
-Layout path:
-default
+<p><strong>Layout name:</strong> Default</p>
 
-Description:
-This layout has only one modification: padding around the body tag.
+<p><strong>Layout path:</strong> default</p>
+
+<p><strong>Description:</strong></p>
+
+<p>This layout has only one modification: padding around the body tag.</p>

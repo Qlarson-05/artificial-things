@@ -1,12 +1,16 @@
-Layout name:
-Dark Sans
+<!-- a small HTML snippet -- keep this formatting light -->
 
-Layout path:
-dark-demo
+<p><strong>Layout name:</strong> Dark Sans</p>
 
-Description:
-This layout modifies the original page by adding fonts, color, spacing, and borders.
+<p><strong>Layout path:</strong> dark-demo</p>
 
-The JavaScript moves the <aside> to the end of <main> and gives it a new <h2> tag.
+<p><strong>Description:</strong></p>
 
-Responsively: the <aside> (now at the end) is in two columns at desktop widths, and the main header title changes font size.
+<ul>
+<li>This layout modifies the original page by adding fonts, color, spacing, and borders.</li>
+
+<li>The JavaScript moves the aside to the end of main and gives it a new h2 tag.</li>
+
+<li>Responsively: the aside (now at the end) is in two columns at desktop widths, and the main header 
+title changes font size.</li>
+</ul>

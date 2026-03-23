@@ -8,6 +8,7 @@ These styles only affect the following:
 - the nav bar and its elements
 - box-sizing on the entire document (to border-box)
 - removing margin and padding from the body (except for nav-sized padding at the top)
+- modal pop-up for "about the theme"
 
 In your submitted styles, try not to override these.
 
@@ -129,6 +130,63 @@ nav>ul>li>ul>li:hover {
 
 nav>ul>li>ul>li:hover a {
     color: var(--nav-hover-text-color);
+}
+
+/* blur and dim the background with a cover */
+#modalCover {
+	position: fixed;
+	display: none; /* hidden by default */
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(255,255,255,0.7);
+	backdrop-filter: blur(8px);
+	z-index: 1000;
+}
+
+/* pop-up window */
+#modalPopup {
+    font-family: Arial, sans-serif;
+	position: fixed;
+	display: none; /* hidden by default */
+	width: 90vw;
+	height: 90vh;
+	left: 5vw;
+	top: 5vh;
+	padding: 2em;
+    border-radius: 2em;
+    box-shadow: 0 5px 10px #ccc;
+    border: 1px solid #ccc;
+	background-color: white;
+	color: black;
+	z-index: 1001;
+}
+
+#modalPopup button {
+    float: right;
+    font-family: monospace;
+    border: 0;
+    background-color: #fff;
+    font-weight: bold;
+    font-size: 2em;
+    color: black;
+}
+
+#modalPopup button:hover {
+    color: #777;
+}
+
+/* freeze the body when a modal appears by giving it the window's
+   width and height, with overflow hidden */
+body.showModal {
+    height: 100%; 
+    overflow: hidden;
+}
+
+body.showModal #modalCover,
+body.showModal #modalPopup {
+	display: block;
 }
 
 
